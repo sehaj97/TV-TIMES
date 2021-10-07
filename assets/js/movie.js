@@ -37,7 +37,7 @@ function displayData(){
             var movieReviewImage = $("<img>").addClass("img-thumbnail").attr("src", test.src).css({"width":"230px","height":"230px"});
             $(movieCol).append(movieReviewImage);
         }
-        var movieSummary = $("<p>").text(responseData.results[i].summary_short);
+        var movieSummary = $("<p>").text(responseData.results[i].summary_short).css({"height":"150px","width": "200px", "overflowY":"scroll"});
         $(movieCol).append(movieSummary);
         var moviebyLine = $("<p>").text("Written By: "+responseData.results[i].byline);
         $(movieCol).append(moviebyLine);
