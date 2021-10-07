@@ -1,0 +1,13 @@
+.bg-image-1 {
+    background-image: url(../images/background.jpg);
+    background-position: center;
+    background-repeat: repeat; 
+    width: 100vw;
+}
+
+.bg-image-2 {
+    background-image: url(../images/shows.jpg);
+    background-position: center;
+    background-repeat: repeat; 
+    width: 100vw;
+}

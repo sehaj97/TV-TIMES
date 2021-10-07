@@ -1,0 +1,10 @@
+.bg-image {
+    background-image: url(../images/bg-books.jfif);
+    background-position: center;
+    background-size: cover;
+}
+.bg-image-2 {
+    background-image: url(../images/book-of-black-cover-closed.png);
+    background-position: center;
+    background-size: cover;
+}

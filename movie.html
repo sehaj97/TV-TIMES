@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link
+    rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.compat.css"
+  />
+    <link rel="stylesheet" href="./assets/css/movie.css">
+
+    <title>Movie Reviews</title>
+  </head>
+  <body>
+      
+    <header>
+        <nav class="navbar navbar-dark bg-dark text-white text-center animated lightSpeedInRight">
+            <div class="container-fluid d-flex justify-content-center p-0">
+              <a class="navbar-brand p-0" href="./index.html"><h1 class="display-1"><img src="./assets/images/tv-monitor.png" alt="shows" style="height: 80px;width: 80px;">TV TIMES</h1></a>
+            </div>
+          </nav>
+    </header>
+
+    <main id="movie-review" class="bg-image">
+      <section class="d-flex flex-column justify-content-center align-items-center px-3 text-center">
+        <h1 class="text-center display-3 bg-warning m-5 px-5 rounded">Movie Reviews</h1>
+        <div class="card m-5 animated slideInUp">
+            <h4 class="card-header text-uppercase text-center">Search more movies</h4>
+            <form id="movie-form" class="card-body">
+              <input name="movie" id="movie-input" type="text" autofocus="true" class="movie-input w-100 rounded" placeholder="type any movie" value=""/>
+              <button type="submit" class="btn btn-primary mt-2 w-100">Search</button>
+            </form>
+        </div>
+      </section>
+      <section id="movie-reviews-list" class="d-flex flex-column justify-content-center align-items-center px-3 text-center">
+
+      </section>
+        
+    </main>
+
+    <footer class="p-3 text-center bg-dark text-white">&copy; Copyright Team-Cara-dune 2021</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./assets/js/movie.js"></script>
+  </body>
+</html>

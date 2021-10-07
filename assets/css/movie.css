@@ -1,0 +1,5 @@
+.bg-image {
+    background-image: url(../images/bg-movie.jpg);
+    background-position: center;
+    background-size: cover;
+}
