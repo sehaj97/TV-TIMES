@@ -4,7 +4,7 @@ var movieFormEl = $("#movie-form");
 
 function getApiInfo(query) {
     window.localStorage.clear();
-    var movieapi = "https://api.nytimes.com/svc/movies/v2/reviews/search.json?api-key=w0C3z7bpN0npCBXWAjTsW6UuX1TP8BaL&query=" + query;
+    var movieapi = "https://api.nytimes.com/svc/movies/v2/reviews/search.json?api-key=ixKJxFefdUxNEpmDMBx0bG3UsH3GerGC&query=" + query;
     fetch(movieapi)
     .then(response => {
         if(response.ok){

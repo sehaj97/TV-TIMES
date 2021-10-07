@@ -1,7 +1,5 @@
 .bg-image {
     background-image: url(../images/bg-blur.jpg);
     background-position: center;
-    background-repeat: repeat; 
-    width: 100vw;
-    height: 90vh;
+    height: 100%;
 }

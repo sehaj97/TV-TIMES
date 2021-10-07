@@ -48,7 +48,7 @@ function displayData(){
         }
         var booksCol= $("<div>").addClass("col-md-3 d-flex flex-column justify-content-center align-items-center text-white bg-info rounded p-2 m-3 bg-image-2").css({"width":"320px", "height":"400px"});
         $(booksRow).append(booksCol);
-        var booksHeading = $("<h4>").addClass("font-weight-light text-success").text(responseData.results[i].book_details[0].title);
+        var booksHeading = $("<h3>").addClass("font-weight-light text-success").text(responseData.results[i].book_details[0].title);
         $(booksCol).append(booksHeading);
         var booksSummary = $("<p>").text(responseData.results[i].book_details[0].description);
         $(booksCol).append(booksSummary);
