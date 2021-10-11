@@ -28,7 +28,9 @@ function getApiInfo(query) {
             response.json().then(data => {
                 console.log(data)
                 if(data.length !== 0){
-                    localStorage.setItem('booksapi', JSON.stringify(data));
+                    if(localStorage.getItem("booksapi") === null){
+                        localStorage.setItem('booksapi', JSON.stringify(data));
+                    }
                     displayData()
                 }
             })
@@ -38,8 +40,9 @@ function getApiInfo(query) {
 
 function displayData(){
     
-    var responseData = JSON.parse(localStorage.getItem('booksapi'));
     $("#books-list").html("");
+    
+    var responseData = JSON.parse(localStorage.getItem('booksapi'));
 
     for(var i = 0; i< responseData.results.length; i++){
         if(i%5 === 0){
@@ -65,6 +68,7 @@ var formHandler = function(event) {
     
     event.preventDefault();
     event.stopPropagation();
+    window.localStorage.clear();
     getApiInfo($("#books-type").val())
 };
 
