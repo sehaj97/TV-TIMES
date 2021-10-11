@@ -3,14 +3,15 @@ var movieInput = $("#movie-input");
 var movieFormEl = $("#movie-form");
 
 function getApiInfo(query) {
-    window.localStorage.clear();
     var movieapi = "https://api.nytimes.com/svc/movies/v2/reviews/search.json?api-key=ixKJxFefdUxNEpmDMBx0bG3UsH3GerGC&query=" + query;
     fetch(movieapi)
     .then(response => {
         if(response.ok){
             response.json().then(data => {
                 if(data.length !== 0){
-                    localStorage.setItem('movieapi', JSON.stringify(data));
+                    if(localStorage.getItem("movieapi") === null){
+                        localStorage.setItem('movieapi', JSON.stringify(data));
+                    }
                     displayData()
                 }
             })
@@ -53,6 +54,7 @@ var formSubmitHandler = function(event) {
     event.preventDefault();
     event.stopPropagation();
     if(movieInput.val() != ""){
+        window.localStorage.clear();
         getApiInfo(movieInput.val());
         movieInput.val("");
     }

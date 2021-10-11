@@ -21,14 +21,15 @@ var infoModal = new bootstrap.Modal(document.getElementById('infoModal'), {
     keyboard: false
 });
 function getApiInfo(showName) {
-    window.localStorage.clear();
     var showAPI = "https://api.tvmaze.com/search/shows?q=" + showName;
     fetch(showAPI)
 	.then(response => {
         if(response.ok){
             response.json().then(data => {
                 if(data.length !== 0){
-                    localStorage.setItem('searched-shows', JSON.stringify(data));
+                    if(localStorage.getItem("searched-shows") === null){
+                        localStorage.setItem('searched-shows', JSON.stringify(data));
+                    }
                      displayCards();
                 } else {
                     errorModal.toggle();
@@ -161,12 +162,10 @@ function displayShowDetails(element){
     }
     
     $(showsCardContainer).append(moreInfoLink);
-    if($(".card-img-top").hasClass('animated flip')){
-        $(".card-img-top").removeClass('animated flip');
-    } else {
-        $(".card-img-top").addClass('animated flip');
-    }
 
+    $(".card-img-top").hover(function(){
+        $(this).toggleClass('animated flip');
+    });
 }
 
 var formSubmitHandler = function(event) {
@@ -175,6 +174,7 @@ var formSubmitHandler = function(event) {
     event.stopPropagation();
     if(showInput.val() != ""){
         showNameParam = showInput.val();
+        window.localStorage.clear();
         getApiInfo(showNameParam);
         showInput.val("");
     } else {
@@ -192,9 +192,9 @@ $(".btn-close-modal").click(function(event){
     event.preventDefault();
     event.stopPropagation();
     $("main").removeClass('animated lightSpeedInLeft');
-    if($(".card-img-top").hasClass('animated flip')){
-        $(".card-img-top").removeClass('animated flip');
-    } else {
-        $(".card-img-top").addClass('animated flip');
-    }
+    
+    
+    $(".card-img-top").hover(function(){
+        $(this).toggleClass('animated flip');
+    });
 });
